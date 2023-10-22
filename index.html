@@ -10,8 +10,7 @@ def echo(client, message):
     if message.text == 'me test':
         message.edit_text('бот работает на тестовом сервере пк клуба, все ок!')
 
-    if message.text == 'me rp':
-        message.edit_text('рп модули еще не загружены')
+    if message.startswith('me rp'):
         text = message.text
         text = text[5:]
         try:
