@@ -1,12 +1,17 @@
 from pyrogram import Client, filters
 
-user = Client("user")
 
+with Client("user") as user:
+    user.send_message("me", "Сервер запущен, бот активен!")
+    
 
 @user.on_message(filters.text & filters.me)
 def echo(client, message):
     if message.text == 'me test':
         message.edit_text('бот работает на тестовом сервере пк клуба, все ок!')
+
+    if message.text == 'me rp':
+        message.edit_text('рп модули еще не загружены')
 
 
 user.run()
