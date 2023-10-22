@@ -1,0 +1,9 @@
+import requests
+import json
+    
+def set_url_pic(tip):
+    url = requests.get("https://api.waifu.pics/sfw/" + tip)
+    set = url.json()
+    print(set['url'])
+
+set_url_pic('waifu')
