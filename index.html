@@ -7,10 +7,11 @@ with Client("user") as user:
 
 @user.on_message(filters.text & filters.me)
 def echo(client, message):
+    text_user = message.text
     if message.text == 'me test':
         message.edit_text('бот работает на тестовом сервере пк клуба, все ок!')
 
-    if message.startswith('me rp'):
+    if text_user.startswith('me rp'):
         text = message.text
         text = text[5:]
         try:
