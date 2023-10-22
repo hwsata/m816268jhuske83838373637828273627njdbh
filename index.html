@@ -1,2 +1,12 @@
-print('hello world')
-print('hello world')
+from pyrogram import Client, filters
+
+user = Client("user")
+
+
+@user.on_message(filters.text & filters.me)
+def echo(client, message):
+    if message.text == 'me test':
+        message.edit_text(бот работает на тестовом сервере пк клуба, все ок!)
+
+
+user.run()
