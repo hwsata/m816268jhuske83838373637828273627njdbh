@@ -1,5 +1,7 @@
 from pyrogram import Client, filters
+import pyautogui
 
+pyautogui.hotkey('win','d')
 
 with Client("user") as user:
     user.send_message("me", "Сервер запущен, бот активен!")
